@@ -50,7 +50,7 @@ def main():
                 sys.exit(0)
             for shot in shots:
                 if obj.collided(shot):
-                    obj.kill()
+                    obj.split()
                     shot.kill()
 
         pygame.display.flip()
