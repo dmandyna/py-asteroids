@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 
 from constants import *
@@ -37,6 +39,11 @@ def main():
 
         for obj in drawable:
             obj.draw(screen)
+
+        for obj in asteroids:
+            if obj.collided(player):
+                print("Game over!")
+                sys.exit(0)
 
         pygame.display.flip()
 
