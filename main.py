@@ -12,7 +12,7 @@ from shot import Shot
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    font = pygame.font.SysFont("arial", 36)
+    font = pygame.font.SysFont("arial", 20)
     score = 0
     clock = pygame.time.Clock()
 
@@ -54,7 +54,7 @@ def main():
                 if obj.collided(shot):
                     obj.split()
                     shot.kill()
-                    score += 1
+                    score += ASTEROID_SCORE
 
         score_text = font.render(f"Score: {score}", True, "white")
         screen.blit(score_text, (10, 10))
